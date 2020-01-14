@@ -6,7 +6,12 @@ class Peliculas{
   Peliculas();
 
   Peliculas.fromJsonList(List<dynamic> jsonList){
-    if(jsonList = null) return;
+    if(jsonList == null) return;
+
+    for(var item in jsonList){
+      final pelicula = new Pelicula.fromJsonMap(item); 
+      items.add(pelicula);
+    }
   }
 
 }
@@ -19,7 +24,7 @@ class Pelicula {
   int id;
   bool adult;
   String backdropPath;
-  OriginalLanguage originalLanguage;
+  String originalLanguage;
   String originalTitle;
   List<int> genreIds;
   String title;
@@ -61,6 +66,19 @@ class Pelicula {
     overview              = json['overview'];
     releaseDate           = json['release_date'];
   }
+
+
+  getPosterImg(){
+    if(posterPath == null){
+      return 'https://cdn11.bigcommerce.com/s-hcp6qon/stencil/01eb2250-b30a-0137-ba33-0242ac110046/icons/icon-no-image.svg';
+    }else{
+          return 'https://image.tmdb.org/t/p/w500/$posterPath';
+
+    }
+  }
+
 }
 
 enum OriginalLanguage { EN, KO, CN, IT }
+
+
