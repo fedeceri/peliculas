@@ -73,7 +73,7 @@ class MovieHorizontal extends StatelessWidget {
   }
 
 
-  List<Widget> _tarjetas(BuildContext context){
+  /* List<Widget> _tarjetas(BuildContext context){
     return peliculas.map((pelicula){
       return Container(
         margin: EdgeInsets.only(right: 15.0),
@@ -100,5 +100,5 @@ class MovieHorizontal extends StatelessWidget {
         ),
       );
     }).toList();
-  }
+  } */
 }
