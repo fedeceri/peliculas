@@ -22,12 +22,15 @@ class CardSwiper extends StatelessWidget {
           itemBuilder: (BuildContext context,int index){
             return ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
-              child: FadeInImage(
-                image: NetworkImage(peliculas[index].getPosterImg()),
-                placeholder: AssetImage('assets/img/no-image.jpg'),
-                fit: BoxFit.cover,
+              child: GestureDetector(
+                onTap: ()=>Navigator.pushNamed(context, 'detalle', arguments: peliculas[index]),
+                              child: FadeInImage(
+                  image: NetworkImage(peliculas[index].getPosterImg()),
+                  placeholder: AssetImage('assets/img/no-image.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
-
+              
             );
           },
           itemCount: peliculas.length,
