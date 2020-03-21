@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
 
   final peliculasProvider = new PeliculasProvider();
 
+//comentario de prueba
 
   @override
   Widget build(BuildContext context) {
