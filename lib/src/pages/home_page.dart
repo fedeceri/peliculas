@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               showSearch(
                 context: context, 
                 delegate: DataSearch(),
-                query: 'Hola',
+                query: '',
                 );
             },
           )
